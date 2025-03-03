@@ -34,7 +34,9 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
       - name: Install dependenceies
-        run: npm install
+        run: |
+          npm install
+          chmod +x node_modules/.bin/vite # Ensure vite is executable
       - name: Build app
         run: npm run build
       - name: Setup Pages
