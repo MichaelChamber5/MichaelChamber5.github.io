@@ -18,13 +18,13 @@ renderer.render(scene, camera);
 
 //create shapes
 const torusGeo = new THREE.TorusGeometry(10, 3, 16, 100);
-const material = new THREE.MeshBasicMaterial({color: 0xffffff, wireframe: true});
+const material = new THREE.MeshBasicMaterial({color: 0x333333, wireframe: true});
 const torusMesh = new THREE.Mesh(torusGeo, material);
 
 scene.add(torusMesh);
 
-const spaceTexture = new THREE.TextureLoader().load('spacePlanet.png');
-scene.background = spaceTexture;
+// const spaceTexture = new THREE.TextureLoader().load('spacePlanet.png');
+// scene.background = spaceTexture;
 
 let lastX = 0;
 let lastY = 0;
@@ -52,8 +52,8 @@ function animate()
 
   //animation logic goes in here v
 
-  torusMesh.rotation.y -= 0.002;
-  torusMesh.rotation.x += 0.008;
+  torusMesh.rotation.y -= 0.006;
+  torusMesh.rotation.x += 0.005;
 
   //ends here ^
 
@@ -61,4 +61,4 @@ function animate()
 }
 
 //TODO: uncomment when you want to do threejs stuff
-//animate();
+animate();
