@@ -13,6 +13,64 @@
 
     <script type="module" src="/src/main.js"></script>
 
-    <h1>Hello I am a heading</h1>
+    <!-- My header -->>
+    <h1>Michael Chambers' Software Portfolio</h1>
+
+    <!-- My about section -->
+    <section id="about">
+      <h2 class = "specialHeader">A Brief Introduction</h2>
+      <p>&emsp;&emsp;My name is Michael Chambers. I am a undergrad software engineer currently getting my 
+        bachelor's of science in computer science at <a href="https://www.gcc.edu">Grove City College</a>.
+        I am also currently in the process of minoring in both video game design and artificial intelligence.
+        This website serves as a portfolio to show off some of my projects.
+      </p>
+    </section>
+
+    <!-- My projects -->>
+    <section id="projects">
+      <h2 class = "specialHeader">Some of my Projects:</h2>
+      <h2><a href = "index.html">Asteroids 3D!</a></h2>
+      <p>
+        This project was made in unity using C#.
+        I'm pretty proud of this one (made in less than 48 hours!). I think the core mechanic of
+        flying through space and shooting asteroids is pretty fun. I've been told the controls
+        are challenging, but I argue that realistic flight controls are more fun. I had to implement
+        some interesting coding tricks to make the game playable without good gaming hardware.
+        I used an object pool to store the asteroids (rather than contuously instantiating and
+        deleting). I also created a spawning buble around the player with an external despawning
+        bubble. This essentially makes the game infinite, allowing the player to fly as far as
+        they want in any direction, spawning in new asteroids and removing asteroids that are 
+        far out of range.
+      </p>
+      <h2><a href = "index.html">Bombies</a></h2>
+      <p>
+        This project was made in unity using C#.
+        This was a homework project made for my 3D games class. It's unfinished (as of now). I
+        think the gameplay is still polished/fun enough to show off regardless. If I had the time,
+        I would add player and zombie models to make the game... actually have zombies. I would
+        also work on making a nicer looking menu system. Other than that, the game is at a decent
+        state.
+      </p>
+      <h2><a href = "index.html">Poker Hand Probability</a></h2>
+      <p>
+        I wrote a program in java that allows the user to run x number of iterations of random
+        hands. It then follows an algorithm to find the best play from that hand (for example,
+        if a hand was fully hearts, the code would return a value of flush (assuming that a 
+        flush is the best play we can make from our hand)).
+      </p>
+      <h2><a href = "index.html">Image to ASCII</a></h2>
+      <p>
+        I wrote a program in python that allows the user to upload an image and changes a few settings
+        (such as pixel width and inversion). The program then prints an ASCII image of the image uploaded.
+      </p>
+      <h2><a href = "index.html">Letterboxed</a></h2>
+      <p>
+        I wrote a program in java that emulates the
+        <a href = "https://www.nytimes.com/puzzles/letter-boxed">
+          Letterboxed game on the NYT website</a>.
+        I also wrote an A* algorithm that solves the puzzle in the least amount of words/letters
+        possible.
+      </p>
+    </section>
   </body>
 </html>

@@ -26,18 +26,39 @@ scene.add(torusMesh);
 const spaceTexture = new THREE.TextureLoader().load('spacePlanet.png');
 scene.background = spaceTexture;
 
+let lastX = 0;
+let lastY = 0;
+
+document.addEventListener('mousemove', (event) => {
+  // Get the current mouse position
+  const currentX = event.clientX;
+  const currentY = event.clientY;
+
+  // Calculate the delta (difference) from the last position
+  const deltaX = currentX - lastX;
+  const deltaY = currentY - lastY;
+
+  // Update the last mouse position
+  lastX = currentX;
+  lastY = currentY;
+
+  // Log the delta values
+  console.log(`Delta X: ${deltaX}, Delta Y: ${deltaY}`);
+});
+
 function animate()
 {
   requestAnimationFrame(animate);
 
   //animation logic goes in here v
 
-  torusMesh.rotation.y += 0.005;
-  torusMesh.rotation.x += 0.01;
+  torusMesh.rotation.y -= 0.002;
+  torusMesh.rotation.x += 0.008;
 
   //ends here ^
 
   renderer.render(scene, camera);
 }
 
-animate();
+//TODO: uncomment when you want to do threejs stuff
+//animate();
