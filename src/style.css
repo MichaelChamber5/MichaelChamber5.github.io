@@ -8,6 +8,11 @@ canvas
   height: 100%;
 }
 
+body
+{
+  color: 0x000000;
+}
+
 h1
 {
   position: relative;
