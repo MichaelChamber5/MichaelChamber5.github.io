@@ -30,25 +30,37 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Setup Node
         uses: actions/setup-node@v4
-      - name: Clean npm cache
-        run: npm cache clean --force
-      - name: Install dependencies
+
+      - name: Delete node_modules and package-lock.json
         run: |
-          npm install
-          chmod +x node_modules/.bin/vite # Ensure vite is executable
+          rm -rf node_modules
+          rm -f package-lock.json
+
+      - name: Reinstall dependencies
+        run: npm install
+
       - name: Verify Vite installation
         run: npm list vite
-      - name: Build app
-        run: ./node_modules/.bin/vite build
+
+      - name: List node_modules/vite directory
+        run: ls -R node_modules/vite
+
+      - name: Build app with Vite
+        run: npx vite build  # Use npx to ensure Vite is run from node_modules/.bin
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: './dist'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
