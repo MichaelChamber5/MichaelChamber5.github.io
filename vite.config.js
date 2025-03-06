@@ -4,8 +4,7 @@ export default {
     build: {
       rollupOptions: {
         input: {
-          main: './index.html',
-          asteroids: './AsteroidsWebBuild/asteroids.html',  // Add your other HTML files here
+          main: './index.html'
         }
       }
     }
