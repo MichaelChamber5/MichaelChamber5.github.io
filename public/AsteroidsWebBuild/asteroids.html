@@ -9,6 +9,7 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
+      <h1>Asteroids 3D!</h1>
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
@@ -107,6 +108,10 @@
           progressBarFull.style.width = 100 * progress + "%";
               }).then((unityInstance) => {
                 loadingBar.style.display = "none";
+
+                console.log("Time to fs");
+                unityInstance.SetFullscreen(1);
+
                 fullscreenButton.onclick = () => {
                   unityInstance.SetFullscreen(1);
                 };
