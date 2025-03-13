@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Double a Number</title>
+</head>
+<body>
+    <h2>Enter a number to double it</h2>
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button onclick="doubleNumber()">Submit</button>
+    <p>Result: <span id="result"></span></p>
+
+    <script>
+        function doubleNumber() {
+            let number = document.getElementById("numberInput").value;
+            fetch(`/api/double?number=` + number)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("result").innerText = data;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
